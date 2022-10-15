@@ -12,5 +12,16 @@ The purpose of this analysis was to help Steve show his parents different green 
 
 ## Summary
 
+### Advantages and Disadvantages of Refactoring Code
+
+The most evident advantage to refactoring code is that it will decrease the run-time and work that a program will have to do in order to complete the analysis. The increase in efficiency is significant and is helpful when there are thousands of rows in a dataset. Refactoring code might not help just the software programming, but it also might be more concise and readable for the viewer of the code.
+
+A disadvantage to refactoring code that comes to mind is the time and effort it might take to do so. Almost always there is more than one way to complete a task while coding, so if the route that the coder decides to go is not the most efficient, it will take more time for them to determine the most efficient way. Another disadvantage of refactoring is the risk of creating errors with already working and useful code, especially in large datasets. It might be easy to accidentally delete or mess up perfectly working code when trying to decide the most logical program.
+
+### Advantages and Disadvantages of Refactoring the Stocks Analysis
+
+The main advantage to refactoring this code is the decrease in run time between the original and refactored programs. Another advantage to refactoring this particular code is the elimination of the nested for loops, which made the original code a little bit difficult to read and follow. The refactored code has for loops, but there are separate from one another rather than within one another.
+
+The disadvantage to the refactored code is the creation of another variable, 'tickerIndex.' This might pose as a source of confusion because it has a similar name to the array 'ticker.' It is important to remember that 'tickerIndex' is a variable while 'ticker' is an array, and it is helpful to think of 'tickerIndex' like the 'ticker' array but in variable form, so each position in the array is assigned a number 0-11.
 
 
