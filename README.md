@@ -12,6 +12,8 @@ The purpose of this analysis was to help Steve show his parents different green 
 
 One of the biggest differences between the two versions of code and the perhaps the driving factor behind the increase in efficiency is the creation of the arrays for 'tickerVolume,' 'tickerStartingPrices,' and 'tickerEndingPrices,' These arrays, each with a size of 12 for the 12 stocks, allowed for the storage of data for each ticker (stock). This way, we could compile data for each ticker rather than each row one by one, tremendously shortening the running time of the analysis, as seen below.
 
+Th
+
 
 ## Summary
 
