@@ -2,7 +2,7 @@
 
 ## Background
 
-Steve is looking to analyze the stock market but needs help finding a way to do it. Excel's Visual Basic Application is the perfect tool to analyze the performance of the 12 green stocks to show that DQ is not the only stock worth investing in the way his parents want him to.
+Steve is looking to analyze the stock market but needs help finding a way to do it. Excel's Visual Basic Application is the perfect tool to analyze the performance of the 12 green stocks to show that DAQO is not the only stock worth investing in the way his parents want him to.
 
 ## Purpose
 
@@ -23,7 +23,7 @@ A disadvantage to refactoring code that comes to mind is the time and effort it 
 
 ### Advantages and Disadvantages of Refactoring the Stocks Analysis
 
-The main advantage to refactoring this code is the decrease in run time between the original and refactored programs. Another advantage to refactoring this particular code is the elimination of the nested for loops, which made the original code a little bit difficult to read and follow. The refactored code has for loops, but there are separate from one another rather than within one another.
+The main advantage to refactoring this code is the decrease in run time between the original and refactored programs. Another advantage to refactoring this particular code is the elimination of the nested for loops, which made the original code a little bit difficult to read and follow. The refactored code has for loops, but there are separate from one another rather than within one another. Through this process, I feel that I have developed a deeper understanding of writing code on VBA, especially with for loops and arrays.
 
 The disadvantage to the refactored code is the creation of another variable, 'tickerIndex.' This might pose as a source of confusion because it has a similar name to the array 'ticker.' It is important to remember that 'tickerIndex' is a variable while 'ticker' is an array, and it is helpful to think of 'tickerIndex' like the 'ticker' array but in variable form, so each position in the array is assigned a number 0-11.
 
