@@ -124,7 +124,7 @@ The above code is the original code, which requires looping through the tickers 
 
 ### Refactored Code
 
-'1a) Create a ticker Index
+    '1a) Create a ticker Index
     'Assigning all 12 tickers to a number (i.e. 0 = AY, 1 = CSIQ, etc.)
     
     Dim tickerIndex As Integer
