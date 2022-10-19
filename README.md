@@ -22,103 +22,103 @@ The above and below screenshots show the time it took for the refactored code to
 
 ### Original Code
 
-Sub AllStocksAnalysis()
+    Sub AllStocksAnalysis()
 
-    'Format the output sheet on the "All Stocks Analysis" worksheet
-    
-    Worksheets("All Stocks Analysis").Activate
+        'Format the output sheet on the "All Stocks Analysis" worksheet
 
-        Range("A1").Value = "All Stocks (2018)"
-    
-        Cells(3, 1).Value = "Ticker"
-    
-        Cells(3, 2).Value = "Total Daily Volume"
-    
-        Cells(3, 3).Value = "Return"
-    
-    'Initialize an array of all tickers
-    
-    Dim tickers(11) As String
-    
-    tickers(0) = "AY"
-    tickers(1) = "CSIQ"
-    tickers(2) = "DQ"
-    tickers(3) = "ENPH"
-    tickers(4) = "FSLR"
-    tickers(5) = "HASI"
-    tickers(6) = "JKS"
-    tickers(7) = "RUN"
-    tickers(8) = "SEDG"
-    tickers(9) = "SPWR"
-    tickers(10) = "TERP"
-    tickers(11) = "VSLR"
-
-    'Prepare for an analysis of the tickers
-    
-    'Initialize variables for starting and ending price
-    
-    Dim startingPrice As Double
-    Dim endingPrice As Double
-    
-    'Activate the data worksheet
-    
-    Worksheets("2018").Activate
-    
-    'Find number of rows to loop over
-    
-    RowCount = Cells(Rows.Count, "A").End(xlUp).Row
-    
-    'Loop through all the tickers
-    
-    For i = 0 To 11
-    
-        ticker = tickers(i)
-        totalVolume = 0
-        
-        'Loop through rows in the data
-        
-        For j = 2 To RowCount
-            
-            Worksheets("2018").Activate
-            
-            'get total volume for current ticker
-            If Cells(j, 1).Value = ticker Then
-            
-                totalVolume = totalVolume + Cells(j, 8).Value
-                
-            End If
-            
-            'get starting price for current ticker
-            
-            If Cells(j - 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
-
-                startingPrice = Cells(j, 6).Value
-
-            End If
-            
-            'get ending price for current ticker
-            
-            If Cells(j + 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
-
-                endingPrice = Cells(j, 6).Value
-            
-            End If
-            
-        Next j
-        
-        'Output data for current ticker
-        
         Worksheets("All Stocks Analysis").Activate
-        Cells(4 + i, 1).Value = ticker
-        Cells(4 + i, 2).Value = totalVolume
-        Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
-        
-    Next i
-    
-    endTime = Timer
-    MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
-    
-End Sub
+
+            Range("A1").Value = "All Stocks (2018)"
+
+            Cells(3, 1).Value = "Ticker"
+
+            Cells(3, 2).Value = "Total Daily Volume"
+
+            Cells(3, 3).Value = "Return"
+
+        'Initialize an array of all tickers
+
+        Dim tickers(11) As String
+
+        tickers(0) = "AY"
+        tickers(1) = "CSIQ"
+        tickers(2) = "DQ"
+        tickers(3) = "ENPH"
+        tickers(4) = "FSLR"
+        tickers(5) = "HASI"
+        tickers(6) = "JKS"
+        tickers(7) = "RUN"
+        tickers(8) = "SEDG"
+        tickers(9) = "SPWR"
+        tickers(10) = "TERP"
+        tickers(11) = "VSLR"
+
+        'Prepare for an analysis of the tickers
+
+        'Initialize variables for starting and ending price
+
+        Dim startingPrice As Double
+        Dim endingPrice As Double
+
+        'Activate the data worksheet
+
+        Worksheets("2018").Activate
+
+        'Find number of rows to loop over
+
+        RowCount = Cells(Rows.Count, "A").End(xlUp).Row
+
+        'Loop through all the tickers
+
+        For i = 0 To 11
+
+            ticker = tickers(i)
+            totalVolume = 0
+
+            'Loop through rows in the data
+
+            For j = 2 To RowCount
+
+                Worksheets("2018").Activate
+
+                'get total volume for current ticker
+                If Cells(j, 1).Value = ticker Then
+
+                    totalVolume = totalVolume + Cells(j, 8).Value
+
+                End If
+
+                'get starting price for current ticker
+
+                If Cells(j - 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
+
+                    startingPrice = Cells(j, 6).Value
+
+                End If
+
+                'get ending price for current ticker
+
+                If Cells(j + 1, 1).Value <> ticker And Cells(j, 1).Value = ticker Then
+
+                    endingPrice = Cells(j, 6).Value
+
+                End If
+
+            Next j
+
+            'Output data for current ticker
+
+            Worksheets("All Stocks Analysis").Activate
+            Cells(4 + i, 1).Value = ticker
+            Cells(4 + i, 2).Value = totalVolume
+            Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
+
+        Next i
+
+        endTime = Timer
+        MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)
+
+    End Sub
 
 The above code is the original code, which requires looping through the tickers and then looping through each row in order to gather the information that we need. With the refactored code, we assign the data that we need to extract (i.e. volume, starting price, and ending price) to an array. With this, we can loop through the data only once because the data for each ticker is stored in the array.
 
