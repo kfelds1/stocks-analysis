@@ -6,16 +6,16 @@ Steve is looking to analyze the stock market but needs help finding a way to do 
 
 ## Purpose
 
-The purpose of this analysis was to help Steve show his parents different green stocks for the years 2017 and 2018 and whether or not they were worth investing in. To do this, I showed the total volume for one particular stock for either 2017 or 2018, and I also showed the return to that stock's investment using its beginning and ending prices. This return value was either positive or negative, giving a general idea on the stock's overall performance that year. After successfully completing the analysis with nested for loops, it was my job to refactor the code to find a quicker and more efficient way to achieve the same outcome.
+The purpose of this analysis is to help Steve show his parents the return on different green stocks for the years 2017 and 2018, and whether or not they are worth investing in. To do this, I show the total volume for one particular stock for either 2017 or 2018, and I also show the return to that stock's investment using its beginning and ending prices. This return value was either positive or negative, giving a general idea on the stock's overall performance that year. After successfully completing the analysis with nested for loops, it is my job to refactor the code to find a quicker and more efficient way to achieve the same outcome.
 
 ## Results
 
-One of the biggest differences between the two versions of code and the perhaps the driving factor behind the increase in efficiency is the creation of the arrays for 'tickerVolume,' 'tickerStartingPrices,' and 'tickerEndingPrices,' These arrays, each with a size of 12 for the 12 stocks, allowed for the storage of data for each ticker (stock). This way, we could compile data for each ticker rather than each row one by one, tremendously shortening the running time of the analysis, as seen below.
+One of the biggest differences between the two versions of code and the perhaps the driving factor behind the increase in efficiency is the creation of the arrays for 'tickerVolume,' 'tickerStartingPrices,' and 'tickerEndingPrices,' These arrays, each with a size of 12 for the 12 stocks, allowed for the storage of data for each ticker (i.e. each stock). This way, we could compile data for each ticker rather than each row one by one, tremendously shortening the running time of the analysis, as seen below.
 
 ![Screen Shot 2022-10-17 at 7 00 02 PM](https://user-images.githubusercontent.com/112633146/196558271-4ca3c015-340b-48e6-ad06-d356287e8436.png)
 ![VBA_Challenge_2017](https://user-images.githubusercontent.com/112633146/196558288-ae6572f0-fe0f-498a-8304-f178faae22e4.png)
 
-The above and below screenshots show the time it took for the refactored code to run and its output for the years 2017 and 2018, respectively. The runtime is tremendously faster than that of the original code. 
+The above and below screenshots show the time it takes for the refactored code to run and its output for the years 2017 and 2018, respectively. The runtime is tremendously faster than that of the original code. 
 
 ![Screen Shot 2022-10-17 at 7 00 51 PM](https://user-images.githubusercontent.com/112633146/196558301-72ae02e3-646f-4980-ae66-ead1d82a84b0.png)
 ![VBA_Challenge_2018](https://user-images.githubusercontent.com/112633146/196558309-3d93d145-8ac3-458f-83ff-d36c8d91cc3b.png)
@@ -201,11 +201,11 @@ The above code is the original code, which requires looping through the tickers 
 
 The most evident advantage to refactoring code is that it will decrease the run-time and work that a program will have to do in order to complete the analysis. The increase in efficiency is significant and is helpful when there are thousands of rows in a dataset. Refactoring code might not help just the software programming, but it also might be more concise and readable for the viewer of the code.
 
-A disadvantage to refactoring code that comes to mind is the time and effort it might take to do so. Almost always there is more than one way to complete a task while coding, so if the route that the coder decides to go is not the most efficient, it will take more time for them to determine the most efficient way. Another disadvantage of refactoring is the risk of creating errors with already working and useful code, especially in large datasets. It might be easy to accidentally delete or mess up perfectly working code when trying to decide the most logical program.
+A disadvantage to refactoring code that comes to mind is the time and effort it might take to do so. Almost always there is more than one way to complete a task while coding, so if the route that the coder decides to go is not the most efficient, it will take more time for them to determine the most efficient way. Another disadvantage of refactoring code is the risk of creating errors with already working and useful code, especially in large datasets. It might be easy to accidentally delete or mess up perfectly working code when trying to decide the most logical program.
 
 ### Advantages and Disadvantages of Refactoring the Stocks Analysis
 
-The main advantage to refactoring this code is the decrease in run time between the original and refactored programs. Another advantage to refactoring this particular code is the elimination of the nested for loops, which made the original code a little bit difficult to read and follow. The refactored code has for loops, but there are separate from one another rather than within one another. Through this process, I feel that I have developed a deeper understanding of writing code on VBA, especially with for loops and arrays.
+The main advantage to refactoring this code is the decrease in run time between the original and refactored programs. Another advantage to refactoring this particular code is the elimination of the nested for loops, which made the original code a little bit difficult to read and follow. The refactored code has for loops, but there are separate from one another rather than within one another. Through this process, I feel that I have developed a deeper understanding of writing code on VBA, especially with for loops and arrays. This knowledge will help me tremendously in other coding platforms as well.
 
 The disadvantage to the refactored code is the creation of another variable, 'tickerIndex.' This might pose as a source of confusion because it has a similar name to the array 'ticker.' It is important to remember that 'tickerIndex' is a variable while 'ticker' is an array, and it is helpful to think of 'tickerIndex' like the 'ticker' array but in variable form, so each position in the array is assigned a number 0-11.
 
